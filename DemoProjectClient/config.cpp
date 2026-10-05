@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class Demo ProjectServer
+	class DemoProjectClient
 	{
 		units[]={};
         weapons[]={};
@@ -8,8 +8,8 @@ class CfgPatches
         requiredAddons[]={
             "DZ_Data",
             "DZ_Scripts",
-            "Demo ProjectClient",
-            "LBmaster_XUQAqH2MJxAJWDJR"
+            "TBLibClient",
+            "JM_CF_Scripts"
         };
 	};
 };
@@ -22,29 +22,32 @@ class CfgAddons
 		class dayz
 		{
 			list[] ={
-			    "Demo ProjectClient",
+			    "TBLibClient",
 			};
 		};
 	};
 };
 
+
 class CfgMods
 {
-	class Demo ProjectServer
+	class DemoProjectClient
 	{
-	    dir = "Demo ProjectServer";
+	    dir = "DemoProjectClient";
         picture = "";
         action = "";
         hideName = 0;
-		name = "Demo ProjectServer";
+		name = "DemoProjectClient";
 		credits = "TheBuster";
-		versionPath = "Demo ProjectServer/scripts/Data/Version.hpp";
+		creditsJson = "DemoProjectClient/Scripts/Data/Credits.json";
+		versionPath = "DemoProjectClient/scripts/Data/Version.hpp";
+		inputs = "DemoProjectClient\inputs.xml";
 		author = "TheBuster";
 		authorID = "76561198196317725";
 		version = "1.0.0";
 		extra = 0;
 		type = "mod";
-		
+
 		dependencies[] = {"Game", "World", "Mission"};
 
 		class defs
@@ -54,26 +57,23 @@ class CfgMods
                 value="";
                 files[]=
                 {
-                    "Demo ProjectServer/scripts/3_Game"
+                    "DemoProjectClient/scripts/3_Game"
                 };
-                obfuscated=1;
             };
             class worldScriptModule
             {
                 value="";
                 files[]=
                 {
-                    "Demo ProjectServer/scripts/4_World"
+                    "DemoProjectClient/scripts/4_World"
                 };
-                obfuscated=1;
             };
 			class missionScriptModule
 			{
 				value = "";
 				files[] = {
-				        "Demo ProjectServer/scripts/5_Mission"
+                    "DemoProjectClient/scripts/5_Mission"
 				};
-				obfuscated=1;
 			};
 		};
 	};
